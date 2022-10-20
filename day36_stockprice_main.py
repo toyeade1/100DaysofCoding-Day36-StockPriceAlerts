@@ -3,11 +3,11 @@ import os
 from twilio.rest import Client
 
 
-os.environ['ALPHA_API_KEY'] = 'KEITELNHX9P212DU'
-os.environ['NEWS_API_KEY'] = 'd8ae79097e6348b69f44d7692d729410'
-os.environ['twilio_account_sid'] = 'AC0ec74fab0b169cb462e3ed29ab0b014f'
-os.environ['twilio_auth_token'] = 'be3f3f793e2995675c8412993a11a0b4'
-os.environ['my_twilio_num'] = '+18584086785'
+os.environ['ALPHA_API_KEY'] = 'apikey'
+os.environ['NEWS_API_KEY'] = 'apikey'
+os.environ['twilio_account_sid'] = 'accountid'
+os.environ['twilio_auth_token'] = 'authtoken'
+os.environ['my_twilio_num'] = '+twilionum'
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -56,7 +56,7 @@ if percentage_difference > 5:
                 .create(
                 body=f"TSLA: 🔺{percentage_difference}%\nHeadline: {news_json[n]['title']}\nBrief: {description}",
                 from_= my_twilio_num,
-                to ='+15405510517'
+                to ='+num'
             )
             print(message.status)
 
@@ -66,7 +66,7 @@ if percentage_difference > 5:
                 .create(
                 body=f"TSLA: 🔻{percentage_difference}%\nHeadline: {news_json[n]['title']}\nBrief: {news_json[n]['description']}",
                 from_= my_twilio_num,
-                to ='+15405510517'
+                to ='+num'
             )
             print(message.status)
 
